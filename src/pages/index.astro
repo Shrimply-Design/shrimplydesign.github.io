@@ -1,0 +1,201 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home - Shrimply Design" description="Welcome to Shrimply Design - Artist Portfolio">
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Welcome to Shrimply Design</h1>
+        <p class="hero-subtitle">Creating Beautiful Art & Design</p>
+        <p class="hero-description">
+          Explore a curated collection of artistic works, from digital illustrations 
+          to traditional paintings. Each piece tells a unique story.
+        </p>
+        <div class="cta-buttons">
+          <a href="/portfolio" class="btn btn-primary">View Portfolio</a>
+          <a href="/contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured">
+    <div class="container">
+      <h2>Featured Works</h2>
+      <div class="featured-grid">
+        <div class="featured-item">
+          <div class="featured-placeholder">
+            <span>Artwork 1</span>
+          </div>
+          <h3>Abstract Dreams</h3>
+          <p>Digital Art, 2024</p>
+        </div>
+        <div class="featured-item">
+          <div class="featured-placeholder">
+            <span>Artwork 2</span>
+          </div>
+          <h3>Ocean Serenity</h3>
+          <p>Watercolor, 2024</p>
+        </div>
+        <div class="featured-item">
+          <div class="featured-placeholder">
+            <span>Artwork 3</span>
+          </div>
+          <h3>Urban Landscapes</h3>
+          <p>Mixed Media, 2024</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+  }
+
+  .btn {
+    padding: 0.875rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background: var(--accent-color);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: #dd6b20;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(237, 137, 54, 0.4);
+  }
+
+  .btn-secondary {
+    background: white;
+    color: var(--primary-color);
+  }
+
+  .btn-secondary:hover {
+    background: var(--light-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .featured {
+    padding: 4rem 0;
+  }
+
+  .featured h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+  }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .featured-item {
+    text-align: center;
+    transition: transform 0.3s;
+  }
+
+  .featured-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .featured-placeholder {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    aspect-ratio: 4/3;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .featured-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .featured-item p {
+    color: var(--secondary-color);
+    margin-bottom: 0;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 4rem 0;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+
+    .featured-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

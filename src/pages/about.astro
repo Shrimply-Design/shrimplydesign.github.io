@@ -1,0 +1,166 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About - Shrimply Design" description="Learn more about Shrimply Design and the artist behind the work">
+  <section class="about-header">
+    <div class="container">
+      <h1>About the Artist</h1>
+    </div>
+  </section>
+
+  <section class="about-content">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <div class="image-placeholder">
+            <span>Artist Photo</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <h2>Hello, I'm an Artist</h2>
+          <p>
+            Welcome to Shrimply Design, where creativity meets passion. With years of experience 
+            in various artistic mediums, I strive to create works that inspire, provoke thought, 
+            and bring beauty into the world.
+          </p>
+          <p>
+            My artistic journey began with a simple love for colors and forms. Over time, 
+            I've explored different techniques and styles, from traditional watercolors to 
+            cutting-edge digital art. Each piece in my portfolio represents a moment of 
+            exploration and discovery.
+          </p>
+          <p>
+            I believe that art is a universal language that transcends boundaries and connects 
+            people. Through my work, I aim to share stories, emotions, and perspectives that 
+            resonate with viewers from all walks of life.
+          </p>
+        </div>
+      </div>
+
+      <div class="skills-section">
+        <h2>Skills & Expertise</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Digital Art</h3>
+            <p>Creating stunning digital illustrations and concept art using modern tools and techniques.</p>
+          </div>
+          <div class="skill-card">
+            <h3>Traditional Painting</h3>
+            <p>Watercolor, oil, and acrylic paintings that capture the essence of natural beauty.</p>
+          </div>
+          <div class="skill-card">
+            <h3>Mixed Media</h3>
+            <p>Combining various materials and techniques to create unique, textured artworks.</p>
+          </div>
+          <div class="skill-card">
+            <h3>Illustration</h3>
+            <p>Character design and storytelling through visual narratives and detailed illustrations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .about-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .about-header h1 {
+    font-size: 3rem;
+  }
+
+  .about-content {
+    padding: 4rem 0;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: start;
+  }
+
+  .image-placeholder {
+    aspect-ratio: 3/4;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .about-text h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+  }
+
+  .skills-section {
+    margin-top: 4rem;
+  }
+
+  .skills-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .skill-card {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .skill-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+
+  .skill-card p {
+    color: var(--secondary-color);
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .about-header h1 {
+      font-size: 2rem;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

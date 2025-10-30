@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact - Shrimply Design" description="Get in touch with Shrimply Design for commissions and inquiries">
+  <section class="contact-header">
+    <div class="container">
+      <h1>Get In Touch</h1>
+      <p>Let's create something beautiful together</p>
+    </div>
+  </section>
+
+  <section class="contact-content">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Contact Information</h2>
+          <p>
+            I'm always excited to work on new projects and collaborate with creative minds. 
+            Whether you're interested in commissioning a piece, discussing a collaboration, 
+            or just want to say hello, feel free to reach out!
+          </p>
+          
+          <div class="info-items">
+            <div class="info-item">
+              <h3>📧 Email</h3>
+              <p>hello@shrimply.design</p>
+            </div>
+            <div class="info-item">
+              <h3>🌐 Social Media</h3>
+              <p>Connect with me on social platforms to see my latest work and updates.</p>
+            </div>
+            <div class="info-item">
+              <h3>💼 Commissions</h3>
+              <p>I'm currently accepting commission requests for both digital and traditional art.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-container">
+          <form class="contact-form" action="#" method="POST">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .contact-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .contact-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 0;
+  }
+
+  .contact-content {
+    padding: 4rem 0;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .contact-info h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-info p {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .info-item {
+    padding: 1.5rem;
+    background: var(--light-bg);
+    border-radius: 10px;
+  }
+
+  .info-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .info-item p {
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+
+  .contact-form {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .btn {
+    padding: 0.875rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    background: var(--accent-color);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: #dd6b20;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(237, 137, 54, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    .contact-header h1 {
+      font-size: 2rem;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

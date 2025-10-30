@@ -121,15 +121,33 @@ import Layout from '../layouts/Layout.astro';
     padding: 1.5rem;
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
-    border-radius: 16px;
-    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    border: 3px solid var(--doodle-color);
     box-shadow: var(--shadow-sm);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+
+  .info-item::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 20px;
+    border: 3px dashed var(--accent-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
   .info-item:hover {
     box-shadow: var(--shadow-md);
-    transform: translateX(4px);
+    transform: translateX(4px) rotate(-1deg);
+  }
+
+  .info-item:hover::before {
+    opacity: 0.5;
   }
 
   .info-item h3 {
@@ -148,8 +166,8 @@ import Layout from '../layouts/Layout.astro';
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
     padding: 2.5rem;
-    border-radius: 20px;
-    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    border: 3px dashed var(--doodle-color);
     box-shadow: var(--shadow-md);
   }
 
@@ -169,11 +187,12 @@ import Layout from '../layouts/Layout.astro';
   textarea {
     width: 100%;
     padding: 0.875rem 1rem;
-    border: 2px solid rgba(226, 232, 240, 0.5);
-    border-radius: 12px;
-    font-family: inherit;
+    border: 3px solid var(--doodle-color);
+    border-radius: 15px;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    background: rgba(255, 255, 255, 0.5);
+    background: var(--glass-bg);
+    color: var(--text-color);
     transition: all 0.3s ease;
   }
 
@@ -181,8 +200,8 @@ import Layout from '../layouts/Layout.astro';
   textarea:focus {
     outline: none;
     border-color: var(--accent-color);
-    background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
   }
 
   textarea {
@@ -192,14 +211,22 @@ import Layout from '../layouts/Layout.astro';
   .btn {
     padding: 1rem 2.5rem;
     text-decoration: none;
-    border-radius: 12px;
+    border-radius: 30px;
     font-weight: 600;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
-    border: none;
+    border: 3px solid var(--accent-color);
     cursor: pointer;
     font-size: 1rem;
     width: 100%;
+    position: relative;
+  }
+
+  .btn::after {
+    content: '→';
+    position: absolute;
+    right: 2rem;
+    transition: transform 0.3s ease;
   }
 
   .btn-primary {
@@ -209,8 +236,12 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .btn-primary:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px) rotate(-2deg);
     box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+  }
+
+  .btn-primary:hover::after {
+    transform: translateX(5px);
   }
 
   @media (max-width: 768px) {

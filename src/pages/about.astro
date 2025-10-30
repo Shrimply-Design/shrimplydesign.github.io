@@ -93,7 +93,7 @@ import Layout from '../layouts/Layout.astro';
     aspect-ratio: 3/4;
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
-    border-radius: 24px;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,8 +101,13 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 600;
     position: relative;
     overflow: hidden;
-    border: 1px solid var(--glass-border);
+    border: 3px solid var(--doodle-color);
     box-shadow: var(--shadow-lg);
+    transition: border-radius 0.5s ease;
+  }
+
+  .image-placeholder:hover {
+    border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%;
   }
 
   .image-placeholder::before {
@@ -116,6 +121,8 @@ import Layout from '../layouts/Layout.astro';
     position: relative;
     z-index: 1;
     color: var(--text-color);
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
   }
 
   .about-text h2 {
@@ -152,16 +159,34 @@ import Layout from '../layouts/Layout.astro';
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
     padding: 2rem;
-    border-radius: 20px;
-    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    border: 3px dashed var(--doodle-color);
     box-shadow: var(--shadow-md);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+
+  .skill-card::before {
+    content: '★';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+    transition: all 0.3s ease;
   }
 
   .skill-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-6px) rotate(-2deg);
     box-shadow: var(--shadow-lg);
-    border-color: var(--accent-color);
+    border-style: solid;
+  }
+
+  .skill-card:hover::before {
+    opacity: 1;
+    transform: scale(1) rotate(20deg);
   }
 
   .skill-card h3 {

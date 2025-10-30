@@ -69,25 +69,27 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   .contact-header {
-    background: var(--primary-color);
-    color: white;
-    padding: 4rem 0;
+    padding: 5rem 0 3rem;
     text-align: center;
   }
 
   .contact-header h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .contact-header p {
-    font-size: 1.2rem;
-    opacity: 0.9;
+    font-size: 1.25rem;
+    color: var(--text-light);
     margin-bottom: 0;
   }
 
   .contact-content {
-    padding: 4rem 0;
+    padding: 3rem 0 5rem;
   }
 
   .contact-grid {
@@ -99,42 +101,56 @@ import Layout from '../layouts/Layout.astro';
   .contact-info h2 {
     color: var(--primary-color);
     margin-bottom: 1.5rem;
+    font-size: 2rem;
   }
 
-  .contact-info p {
-    font-size: 1.1rem;
-    color: var(--secondary-color);
+  .contact-info > p {
+    font-size: 1.125rem;
+    color: var(--text-light);
     line-height: 1.8;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
   }
 
   .info-items {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .info-item {
     padding: 1.5rem;
-    background: var(--light-bg);
-    border-radius: 10px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .info-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
   }
 
   .info-item h3 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.125rem;
   }
 
   .info-item p {
     margin-bottom: 0;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-light);
   }
 
   .contact-form {
-    background: var(--light-bg);
-    padding: 2rem;
-    border-radius: 10px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-md);
   }
 
   .form-group {
@@ -146,23 +162,27 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 0.5rem;
     color: var(--primary-color);
     font-weight: 600;
+    font-size: 0.95rem;
   }
 
   input,
   textarea {
     width: 100%;
-    padding: 0.75rem;
-    border: 2px solid #e2e8f0;
-    border-radius: 5px;
+    padding: 0.875rem 1rem;
+    border: 2px solid rgba(226, 232, 240, 0.5);
+    border-radius: 12px;
     font-family: inherit;
     font-size: 1rem;
-    transition: border-color 0.3s;
+    background: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
   }
 
   input:focus,
   textarea:focus {
     outline: none;
     border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
   }
 
   textarea {
@@ -170,36 +190,41 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .btn {
-    padding: 0.875rem 2rem;
+    padding: 1rem 2.5rem;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 12px;
     font-weight: 600;
-    transition: all 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
     border: none;
     cursor: pointer;
     font-size: 1rem;
+    width: 100%;
   }
 
   .btn-primary {
-    background: var(--accent-color);
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
     color: white;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
   }
 
   .btn-primary:hover {
-    background: #dd6b20;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(237, 137, 54, 0.4);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
   }
 
   @media (max-width: 768px) {
     .contact-header h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 
     .contact-grid {
       grid-template-columns: 1fr;
       gap: 2rem;
+    }
+
+    .contact-form {
+      padding: 2rem;
     }
   }
 </style>

@@ -40,12 +40,20 @@ const { title, description = "Artist Portfolio - Shrimply Design" } = Astro.prop
 
 <style is:global>
   :root {
-    --primary-color: #2d3748;
-    --secondary-color: #4a5568;
-    --accent-color: #ed8936;
-    --text-color: #1a202c;
-    --bg-color: #ffffff;
-    --light-bg: #f7fafc;
+    --primary-color: #0f172a;
+    --secondary-color: #334155;
+    --accent-color: #6366f1;
+    --accent-light: #818cf8;
+    --text-color: #1e293b;
+    --text-light: #64748b;
+    --bg-color: #f8fafc;
+    --bg-gradient-start: #f1f5f9;
+    --bg-gradient-end: #e0e7ff;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
   }
 
   * {
@@ -55,10 +63,13 @@ const { title, description = "Artist Portfolio - Shrimply Design" } = Astro.prop
   }
 
   html {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: var(--bg-color);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+    background-attachment: fixed;
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
@@ -67,18 +78,21 @@ const { title, description = "Artist Portfolio - Shrimply Design" } = Astro.prop
     flex-direction: column;
   }
 
+  /* Frosted Glass Navigation */
   nav {
-    background: var(--primary-color);
-    color: white;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--glass-border);
     padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: all 0.3s ease;
   }
 
   .nav-container {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
@@ -88,49 +102,82 @@ const { title, description = "Artist Portfolio - Shrimply Design" } = Astro.prop
 
   .logo {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
+    font-weight: 700;
+    color: var(--primary-color);
     text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: color 0.3s ease;
+  }
+
+  .logo:hover {
+    color: var(--accent-color);
   }
 
   .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .nav-links a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
-    transition: color 0.3s;
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
   }
 
   .nav-links a:hover {
     color: var(--accent-color);
   }
 
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
   main {
     flex: 1;
   }
 
+  /* Modern Footer */
   footer {
-    background: var(--primary-color);
-    color: white;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-top: 1px solid var(--glass-border);
+    color: var(--text-light);
     text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
+    padding: 2.5rem 2rem;
+    margin-top: 6rem;
+    font-size: 0.9rem;
   }
 
   h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    font-weight: 800;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   h3 {
@@ -139,26 +186,27 @@ const { title, description = "Artist Portfolio - Shrimply Design" } = Astro.prop
 
   p {
     margin-bottom: 1rem;
+    color: var(--text-light);
   }
 
   .container {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 2rem;
   }
 
   @media (max-width: 768px) {
     .nav-links {
-      gap: 1rem;
-      font-size: 0.9rem;
+      gap: 1.5rem;
+      font-size: 0.85rem;
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
 
     .container {

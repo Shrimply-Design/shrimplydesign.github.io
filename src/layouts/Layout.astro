@@ -13,6 +13,12 @@ const { title, description = "Artist Portfolio - Shrimply Design" } = Astro.prop
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add icon for rich rendering  (e.g., Discord, Slack) -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/fully_white_ally.png" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>

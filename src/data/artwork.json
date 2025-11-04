@@ -1,0 +1,44 @@
+{
+    "artworks": [
+        {
+            "title": "Eye to Eye",
+            "description": "",
+            "url": "portfolio/eye_to_eye.jpg",
+            "medium": "Digital",
+            "year": 2025
+        },
+        {
+            "title": "Merry Wives of Windsor",
+            "url": "portfolio/merry_wives_of_windsor.png",
+            "medium": "Digital",
+            "year": 2025
+        },
+        {
+            "title": "Laundry Day",
+            "url": "portfolio/laundry_day.png",
+            "medium": "Digital",
+            "year": 2024
+        },
+        {
+            "title": "Pete's Pet Posse",
+            "url": "portfolio/ppp.png",
+            "medium": "Digital + fabric apparel",
+            "year": 2024,
+            "featured": true
+        },
+        {
+            "title": "Roxie Weber Strong Mural",
+            "url": "portfolio/mural.jpg",
+            "medium": "Acrylic + spraypaint on wall",
+            "year": 2025,
+            "featured": true
+        },
+        {
+            "title": "Me and the Old Man",
+            "url": "portfolio/me_and_the_old_man.png",
+            "medium": "Digital",
+            "year": 2024,
+            "featured": true
+        }
+    ]
+}

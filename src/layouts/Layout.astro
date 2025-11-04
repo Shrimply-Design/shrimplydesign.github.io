@@ -5,7 +5,7 @@ interface Props {
   imageUrl?: string;
 }
 
-const { title, description = "Artist Portfolio - Shrimply Design", imageUrl } = Astro.props;
+const { title, description = "Shrimply Design", imageUrl } = Astro.props;
 ---
 
 <!doctype html>
@@ -421,7 +421,14 @@ const { title, description = "Artist Portfolio - Shrimply Design", imageUrl } = 
   }
 
   @media (max-width: 768px) {
+    .nav-container {
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0 1rem;
+    }
+
     .nav-right {
+      align-items: center;
       gap: 1rem;
     }
 

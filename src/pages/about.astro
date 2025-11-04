@@ -1,0 +1,218 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About - Shrimply Design" description="Learn more about Shrimply Design and the artist behind the work">
+  <section class="about-header">
+    <div class="container">
+      <h1>About the Artist</h1>
+    </div>
+  </section>
+
+  <section class="about-content">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <div class="image-placeholder">
+            <span>Artist Photo</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <h2>Hello, I'm an Artist</h2>
+          <p>
+            Welcome to Shrimply Design, where creativity meets passion. With years of experience 
+            in various artistic mediums, I strive to create works that inspire, provoke thought, 
+            and bring beauty into the world.
+          </p>
+          <p>
+            My artistic journey began with a simple love for colors and forms. Over time, 
+            I've explored different techniques and styles, from traditional watercolors to 
+            cutting-edge digital art. Each piece in my portfolio represents a moment of 
+            exploration and discovery.
+          </p>
+          <p>
+            I believe that art is a universal language that transcends boundaries and connects 
+            people. Through my work, I aim to share stories, emotions, and perspectives that 
+            resonate with viewers from all walks of life.
+          </p>
+        </div>
+      </div>
+
+      <div class="skills-section">
+        <h2>Skills & Expertise</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Digital Art</h3>
+            <p>Creating stunning digital illustrations and concept art using modern tools and techniques.</p>
+          </div>
+          <div class="skill-card">
+            <h3>Traditional Painting</h3>
+            <p>Watercolor, oil, and acrylic paintings that capture the essence of natural beauty.</p>
+          </div>
+          <div class="skill-card">
+            <h3>Mixed Media</h3>
+            <p>Combining various materials and techniques to create unique, textured artworks.</p>
+          </div>
+          <div class="skill-card">
+            <h3>Illustration</h3>
+            <p>Character design and storytelling through visual narratives and detailed illustrations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .about-header {
+    padding: 5rem 0 3rem;
+    text-align: center;
+  }
+
+  .about-header h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .about-content {
+    padding: 3rem 0 5rem;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    margin-bottom: 5rem;
+    align-items: start;
+  }
+
+  .image-placeholder {
+    aspect-ratio: 3/4;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid var(--doodle-color);
+    box-shadow: var(--shadow-lg);
+    transition: border-radius 0.5s ease;
+  }
+
+  .image-placeholder:hover {
+    border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%;
+  }
+
+  .image-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(129, 140, 248, 0.2) 100%);
+  }
+
+  .image-placeholder span {
+    position: relative;
+    z-index: 1;
+    color: var(--text-color);
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+  }
+
+  .about-text h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .skills-section {
+    margin-top: 5rem;
+  }
+
+  .skills-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 30px;
+    border: 3px dashed var(--doodle-color);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+
+  .skill-card::before {
+    content: '★';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+    transition: all 0.3s ease;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-6px) rotate(-2deg);
+    box-shadow: var(--shadow-lg);
+    border-style: solid;
+  }
+
+  .skill-card:hover::before {
+    opacity: 1;
+    transform: scale(1) rotate(20deg);
+  }
+
+  .skill-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+
+  .skill-card p {
+    color: var(--text-light);
+    margin-bottom: 0;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .about-header h1 {
+      font-size: 2.5rem;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

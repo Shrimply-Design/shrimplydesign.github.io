@@ -1,0 +1,261 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact - Shrimply Design" description="Get in touch with Shrimply Design for commissions and inquiries">
+  <section class="contact-header">
+    <div class="container">
+      <h1>Get In Touch</h1>
+      <p>Let's create something beautiful together</p>
+    </div>
+  </section>
+
+  <section class="contact-content">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Contact Information</h2>
+          <p>
+            I'm always excited to work on new projects and collaborate with creative minds. 
+            Whether you're interested in commissioning a piece, discussing a collaboration, 
+            or just want to say hello, feel free to reach out!
+          </p>
+          
+          <div class="info-items">
+            <div class="info-item">
+              <h3>📧 Email</h3>
+              <p>hello@shrimply.design</p>
+            </div>
+            <div class="info-item">
+              <h3>🌐 Social Media</h3>
+              <p>Connect with me on social platforms to see my latest work and updates.</p>
+            </div>
+            <div class="info-item">
+              <h3>💼 Commissions</h3>
+              <p>I'm currently accepting commission requests for both digital and traditional art.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-container">
+          <form class="contact-form" action="#" method="POST">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .contact-header {
+    padding: 5rem 0 3rem;
+    text-align: center;
+  }
+
+  .contact-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .contact-header p {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-bottom: 0;
+  }
+
+  .contact-content {
+    padding: 3rem 0 5rem;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .contact-info h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+
+  .contact-info > p {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  .info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .info-item {
+    padding: 1.5rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 3px solid var(--doodle-color);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+
+  .info-item::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 20px;
+    border: 3px dashed var(--accent-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .info-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px) rotate(-1deg);
+  }
+
+  .info-item:hover::before {
+    opacity: 0.5;
+  }
+
+  .info-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+  }
+
+  .info-item p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: var(--text-light);
+  }
+
+  .contact-form {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 30px;
+    border: 3px dashed var(--doodle-color);
+    box-shadow: var(--shadow-md);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 3px solid var(--doodle-color);
+    border-radius: 15px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    background: var(--glass-bg);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .btn {
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    border: 3px solid var(--accent-color);
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    position: relative;
+  }
+
+  .btn::after {
+    content: '→';
+    position: absolute;
+    right: 2rem;
+    transition: transform 0.3s ease;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px) rotate(-2deg);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+  }
+
+  .btn-primary:hover::after {
+    transform: translateX(5px);
+  }
+
+  @media (max-width: 768px) {
+    .contact-header h1 {
+      font-size: 2.5rem;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .contact-form {
+      padding: 2rem;
+    }
+  }
+</style>

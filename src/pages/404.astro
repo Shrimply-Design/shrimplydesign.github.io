@@ -1,0 +1,231 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 - Page Not Found" description="The page you are looking for does not exist.">
+  <section class="not-found">
+    <div class="container">
+      <h1>404</h1>
+      <p>Oops! The page you are looking for does not exist.</p>
+      <a href="/" class="btn btn-primary"> Go Back Home</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .not-found {
+    padding: 8rem 0;
+    text-align: center;
+  }
+
+  .not-found h1 {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .not-found p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: visible;
+    border: 3px solid transparent;
+  }
+
+  .btn::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 30px;
+    border: 3px dashed var(--accent-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+    animation: rotate 20s linear infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .btn:hover::after {
+    opacity: 0.5;
+    inset: -6px;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px) rotate(-2deg);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+  }
+
+  .btn-secondary {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    color: var(--primary-color);
+    border: 3px solid var(--accent-color);
+  }
+
+  .btn-secondary:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-3px) rotate(2deg);
+    box-shadow: var(--shadow-md);
+  }
+
+  .featured {
+    padding: 5rem 0;
+  }
+
+  .featured h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+  }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .featured-item {
+    text-align: center;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .featured-item:hover {
+    transform: translateY(-8px);
+  }
+
+  .featured-item:hover .featured-placeholder {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .featured-placeholder {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    aspect-ratio: 4/3;
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid var(--doodle-color);
+    box-shadow: var(--shadow-md);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .featured-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #f093fb20 0%, #f5576c20 100%);
+    opacity: 0.6;
+  }
+
+  .featured-placeholder::after {
+    content: '✨';
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .featured-item:hover .featured-placeholder::after {
+    opacity: 1;
+  }
+
+  .featured-item:hover .featured-placeholder {
+    border-radius: 42% 58% 70% 30% / 45% 55% 45% 55%;
+    transform: rotate(3deg);
+  }
+
+  .featured-placeholder span {
+    position: relative;
+    z-index: 1;
+    color: var(--text-color);
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+  }
+
+  .featured-placeholder > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+
+  .featured-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  .featured-item p {
+    color: var(--text-light);
+    margin-bottom: 0;
+    font-size: 0.95rem;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 5rem 0 3rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+    }
+
+    .featured-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .btn {
+      padding: 0.875rem 2rem;
+    }
+  }
+
+</style>

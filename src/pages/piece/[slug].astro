@@ -20,7 +20,8 @@ const imageUrl = piece ? `/${piece.url}` : "";
 ---
 
 
-<Layout title={`${title} - Shrimply Design`} description={description}>
+<!-- We're using another ternary here so we can fall back on undefined for the imageUrl prop if the piece is not found -->
+<Layout title={`${title} - Shrimply Design`} description={description} imageUrl={piece ? piece.url : undefined}>
   <section class="piece-header">
     <div class="container">
       <h1>{title}</h1>

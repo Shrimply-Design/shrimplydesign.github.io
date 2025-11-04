@@ -2,9 +2,10 @@
 interface Props {
   title: string;
   description?: string;
+  imageUrl?: string;
 }
 
-const { title, description = "Artist Portfolio - Shrimply Design" } = Astro.props;
+const { title, description = "Artist Portfolio - Shrimply Design", imageUrl } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,8 +18,12 @@ const { title, description = "Artist Portfolio - Shrimply Design" } = Astro.prop
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <!--- <meta property="og:image" content="https://shrimply.design/full_white_ally.png" /> -->
+    <meta property="og:url" content="https://shrimply.design/" />
+
+    { imageUrl ?
+    <meta property="og:image" content={`https://shrimply.design/${imageUrl}`} /> :
     <meta name="twitter:image" content="https://shrimply.design/full_white_ally.png" />
+    }
 
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />

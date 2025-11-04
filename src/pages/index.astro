@@ -31,7 +31,7 @@ const featured = artworks.filter(artwork => artwork.featured);
         {featured.map((artwork) => (
         <div class="featured-item">
           <a class="featured-placeholder" href={`/piece/${titleToSlug(artwork.title)}`}>
-            <img src={artwork.url} alt={artwork.title} />
+            <img src={`/${artwork.url}`} alt={artwork.title} />
           </a>
           <h3>{artwork.title}</h3>
           <p>{artwork.medium} • {artwork.year}</p>

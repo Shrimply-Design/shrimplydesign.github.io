@@ -18,7 +18,7 @@ import { titleToSlug } from '../utils';
         {artworks.map((artwork) => (
         <div class="gallery-item">
           <a class="artwork-placeholder" href={`/piece/${titleToSlug(artwork.title)}`}>
-            <img src={artwork.url} alt={artwork.title} />
+            <img src={`/${artwork.url}`} alt={artwork.title} />
           </a>
           <div class="artwork-info">
             <h3>{artwork.title}</h3>

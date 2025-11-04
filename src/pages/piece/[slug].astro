@@ -1,0 +1,83 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { artworks } from '../../data/artwork.json';
+import { titleToSlug } from '../../utils.ts';
+
+
+const { slug } = Astro.params;
+
+export async function getStaticPaths() {
+  return artworks.map(artwork => ({
+    params: { slug: titleToSlug(artwork.title) },
+  }));
+}
+
+const piece = artworks.find(artwork => titleToSlug(artwork.title) === slug);
+
+const title = piece ? piece.title : 'Artwork Not Found';
+const description = piece ? piece.description : "";
+const imageUrl = piece ? `/${piece.url}` : "";
+---
+
+
+<Layout title={`${title} - Shrimply Design`} description={description}>
+  <section class="piece-header">
+    <div class="container">
+      <h1>{title}</h1>
+      <p>{description}</p>
+    </div>
+  </section>
+  <section class="piece-content">
+    <div class="container">
+      <div class="piece-image">
+      <img src={imageUrl} alt={title} />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .piece-header {
+    padding: 5rem 0 0.5rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .piece-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .piece-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .piece-header p {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-bottom: 0;
+  }
+
+  .piece-content {
+    padding: 1rem 0 5rem;
+    text-align: center;
+  }
+
+  .piece-content img {
+    max-height: 50vh;
+    width: auto;
+    border-radius: 1rem;
+  }
+</style>
+

@@ -22,14 +22,14 @@ import Layout from '../layouts/Layout.astro';
           </p>
           
           <div class="info-items">
-            <div class="info-item">
+
+            <a class="info-item" href="mailto:hello@shrimply.design">
               <h3>📧 Email</h3>
-              <p>hello@shrimply.design</p>
-            </div>
-            <div class="info-item">
+            </a>
+            <a class="info-item" href="https://instagram.com/shrimplydesign" target="_blank" rel="noopener noreferrer">
               <h3>🌐 Social Media</h3>
               <p>Connect with me on social platforms to see my latest work and updates.</p>
-            </div>
+            </a>
             <div class="info-item">
               <h3>💼 Commissions</h3>
               <p>I'm currently accepting commission requests for both digital and traditional art.</p>
@@ -38,7 +38,8 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div class="contact-form-container">
-          <form class="contact-form" action="#" method="POST">
+          <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="2d42a0ba-5c79-49f8-91cb-ec9b923f2517">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" required />
@@ -126,6 +127,7 @@ import Layout from '../layouts/Layout.astro';
     box-shadow: var(--shadow-sm);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+    text-decoration: none;
   }
 
   .info-item::before {
